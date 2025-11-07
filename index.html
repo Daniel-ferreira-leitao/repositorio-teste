@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio - Daniel Ferreira Leitão</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    header img {
+      width: 180px;
+      height: auto;
+      border-radius: 10px;
+      border: 3px solid #fff;
+      margin-bottom: 20px;
+    }
+    header h1 {
+      margin: 10px 0 5px;
+      font-size: 28px;
+    }
+    header p {
+      font-size: 16px;
+      color: #ccc;
+    }
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    section h2 {
+      border-left: 5px solid #111;
+      padding-left: 10px;
+      margin-bottom: 15px;
+      color: #111;
+    }
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+    .projeto {
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .projeto h3 {
+      margin: 0 0 5px;
+    }
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #ff4444;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<script>
+  function carregarUsuarios() {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(data => {
+        const lista = document.getElementById('lista-usuarios');
+        lista.innerHTML = ''; // Limpa a lista
+        data.forEach(usuario => {
+          const item = document.createElement('li');
+          item.textContent = `${usuario.name} - ${usuario.email}`;
+          lista.appendChild(item);
+        });
+      })
+      .catch(error => {
+        console.error('Erro ao carregar usuários:', error);
+      });
+  }
+</script>
+<body>
+
+  <header>
+    <img src="https://scontent.fmao1-1.fna.fbcdn.net/v/t51.82787-15/552971879_18359103970084668_2878847306552141362_n.webp?stp=dst-jpg_tt6&_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGkr-72Zu3uomvYqAmP7C0rtDU6Ha2bTQe0NTodrZtNB-zSFsJYWtccq1YknejGaVNr-KRq_hDSQnUHrT5GVDPr&_nc_ohc=H4EOg3t6JaQQ7kNvwGAq90x&_nc_oc=AdkUZW4-g5WkPWjF9idTZJgIHtP_en_qkFPUcgWRw22ITZ2h-52ftDwI_QQXz_3-AAay9mIUlsjHP38iIHmhf0Yp&_nc_zt=23&_nc_ht=scontent.fmao1-1.fna&_nc_gid=iE2sVu7ICheJt7R0qMl-cA&oh=00_AfYxuDPh1QQ9hKkQvJAZhvLc9OAOpMh9oVBJvFTILKcl5w&oe=68DA72B9" alt="Foto de Daniel Ferreira Leitão">
+    <h1>Daniel Ferreira Leitão</h1>
+    <p>Desenvolvedor | Entusiasta de Tecnologia | Criador de Projetos Digitais</p>
+  </header>
+
+  <section>
+    <h2>Sobre mim</h2>
+    <p>
+      Sou um profissional dedicado à área de tecnologia, apaixonado por desenvolvimento de software 
+      e sempre em busca de novos desafios. Tenho experiência com projetos web e foco em aprender e 
+      aplicar boas práticas de programação.
+    </p>
+  </section>
+
+  <section>
+    <h2>Habilidades Técnicas</h2>
+    <ul>
+      <li>HTML5, CSS3 e JavaScript</li>
+      <li>Desenvolvimento Front-end Responsivo</li>
+      <li>Banco de Dados MySQL</li>
+      <li>Programação em C e Python</li>
+      <li>Controle de Versão com Git e GitHub</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Projetos Desenvolvidos</h2>
+    <div class="projeto">
+      <h3><a href="#" target="_blank">Sistema de Portfólio</a></h3>
+      <p>Site pessoal desenvolvido com HTML e CSS para apresentação profissional.</p>
+    </div>
+    <div class="projeto">
+      <h3><a href="#" target="_blank">Aplicativo de Tarefas</a></h3>
+      <p>Aplicação simples para gerenciamento de tarefas, construída em JavaScript.</p>
+    </div>
+    <div class="projeto">
+      <h3><a href="#" target="_blank">Banco de Dados de Usuários</a></h3>
+      <p>Projeto em MySQL para gerenciamento de informações de usuários.</p>
+    </div>
+  </section>
+  <section>
+  <h2>Usuários da API</h2>
+  <button onclick="carregarUsuarios()">Carregar Usuários</button>
+  <ul id="lista-usuarios"></ul>
+</section>
+
+  <section>
+    <h2>Contato</h2>
+    <p>
+      Você pode entrar em contato comigo pelo e-mail: 
+      <a href="mailto:levita.dfl777@outlook.com">levita.dfl777@outlook.com</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 - Portfólio de Daniel Ferreira Leitão</p>
+  </footer>
+
+</body>
+</html>
+
